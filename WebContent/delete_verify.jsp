@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>¼ö°­½ÅÃ» »èÁ¦</title>
+<title>ìˆ˜ê°•ì‹ ì²­ ì‚­ì œ</title>
 </head>
 <body>
 <%
@@ -17,8 +17,8 @@
 	
 	String mySQL = null;
 	String dburl = "jdbc:oracle:thin:@localhost:1521:orcl";
-	String user = "db1714223";
-	String passwd = "0917";
+	String user = "DB_ID";
+	String passwd = "DB_PW";
 	String dbdriver = "oracle.jdbc.driver.OracleDriver";
 	try{
 		Class.forName(dbdriver);
@@ -31,7 +31,7 @@
 	int res = stmt.executeUpdate(mySQL);
 	if(res==1){%>
 		<script>
-			alert("¼ö°­ Ãë¼ÒµÇ¾ú½À´Ï´Ù.")
+			alert("ìˆ˜ê°• ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤.")
 			location.href="delete.jsp";
 		</script>
 <%	}
