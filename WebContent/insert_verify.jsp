@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>수강신청 입력</title>
+<title>쩌철째짯쩍횇횄쨩 ��횚쨌횂</title>
 </head>
 <body>
 <%	String s_id = (String)session.getAttribute("user");
@@ -14,8 +14,8 @@
 <%	Connection myConn = null;
 	String result = null;
 	String dburl = "jdbc:oracle:thin:@localhost:1521:orcl";
-	String user = "db1714223"; 
-	String passwd = "0917";
+	String user = "db_id";
+	String passwd = "db_pw";
 	String dbdriver = "oracle.jdbc.driver.OracleDriver";
 	try{
 		Class.forName(dbdriver);
