@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>¼ö°­½ÅÃ» ÀÔ·Â</title>
+<title>ìˆ˜ê°•ì‹ ì²­ ì…ë ¥</title>
 <style>
 	table{border: 1px solid #D5D5D5; border-collapse: collapse;}
 	th,td{border: 1px solid #D5D5D5;}
@@ -22,18 +22,18 @@
 	<%@ include file="top.jsp" %>
 	<% if (session.getAttribute("user")==null){%>
 		<script>
-			alert("·Î±×ÀÎ ÇÑ ÈÄ »ç¿ëÇÏ¼¼¿ä.");
+			alert("ë¡œê·¸ì¸ í•œ í›„ ì‚¬ìš©í•˜ì„¸ìš”.");
 			location.href="login.jsp";
 		</script>
 	<%} %>
 	<table width="80%" align="center">
 	<br><br>
-	<tr id="table_head"><th>°ú¸ñ¹øÈ£</th><th>ºĞ¹İ</th><th>°ú¸ñ¸í</th><th>±³¼ö¸í</th><th>°­ÀÇ½Ã°£</th><th>Àå¼Ò</th><th>ÇĞÁ¡</th><th>¼ö°­ÀÎ¿ø</th><th>¼ö°­½ÅÃ»</th></tr>
+	<tr id="table_head"><th>ê³¼ëª©ë²ˆí˜¸</th><th>ë¶„ë°˜</th><th>ê³¼ëª©ëª…</th><th>êµìˆ˜ëª…</th><th>ê°•ì˜ì‹œê°„</th><th>ì¥ì†Œ</th><th>í•™ì </th><th>ìˆ˜ê°•ì¸ì›</th><th>ìˆ˜ê°•ì‹ ì²­</th></tr>
 	<%
 	String dbdriver = "oracle.jdbc.driver.OracleDriver"; 
 	String dburl = "jdbc:oracle:thin:@localhost:1521:orcl"; 
-	String user = "db1714223";
-	String passwd = "0917";
+	String user = "db_id";
+	String passwd = "db_pw";
 	Connection myConn = null;
 	
 	Class.forName(dbdriver);
@@ -58,12 +58,12 @@
     int nmonth = cal.get(Calendar.MONTH)+1; 
     String semester;
     if(nmonth>=1 && nmonth<=4){
-    	semester = "1ÇĞ±â";
+    	semester = "1í•™ê¸°";
     }else if(nmonth>=5 && nmonth<=10){
-    	semester = "2ÇĞ±â";
+    	semester = "2í•™ê¸°";
     }else{
     	nyear++;
-    	semester = "1ÇĞ±â";
+    	semester = "1í•™ê¸°";
     }
 	
 	stmt = myConn.createStatement();
@@ -86,7 +86,7 @@
 			<td align="center"><%= c_name %></td> <td align="center"><%= p_name %></td>
 			<td align="center"><%= t_time %></td> <td align="center"><%= t_place %></td>
 			<td align="center"><%= c_unit %></td><td align="center"><%=e_count%>/<%= tmax %></td>
-			<td id="insert_btn" align="center"><a href="insert_verify.jsp?c_id=<%= c_id %>&c_id_no=<%=c_id_no %>">½ÅÃ»</a></td>
+			<td id="insert_btn" align="center"><a href="insert_verify.jsp?c_id=<%= c_id %>&c_id_no=<%=c_id_no %>">ì‹ ì²­</a></td>
 			</tr>
 		<%}
 	}
