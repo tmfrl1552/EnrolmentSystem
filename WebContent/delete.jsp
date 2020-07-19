@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>¼ö°­½ÅÃ» »èÁ¦</title>
+<title>ìˆ˜ê°•ì‹ ì²­ ì‚­ì œ</title>
 <style>
 	table{border: 1px solid #D5D5D5; border-collapse: collapse;}
 	th,td{border: 1px solid #D5D5D5;}
@@ -22,25 +22,25 @@
 	<%@include file="top.jsp" %>
 	<% if (session.getAttribute("user")==null){%>
 		<script>
-			alert("·Î±×ÀÎ ÇÑ ÈÄ »ç¿ëÇÏ¼¼¿ä.");
+			alert("ë¡œê·¸ì¸ í•œ í›„ ì‚¬ìš©í•˜ì„¸ìš”.");
 			location.href="login.jsp";
 		</script>
 	<%} %>
 	<br><br>
 	<table width="75%" align="center" border>
-		<tr id="table_head"><th>°ú¸ñ¹øÈ£</th><th>ºĞ¹İ</th><th>°ú¸ñ¸í</th><th>±³¼ö¸í</th><th>°­ÀÇ½Ã°£</th><th>Àå¼Ò</th><th>ÇĞÁ¡</th><th>Ãë¼Ò</th></tr>
+		<tr id="table_head"><th>ê³¼ëª©ë²ˆí˜¸</th><th>ë¶„ë°˜</th><th>ê³¼ëª©ëª…</th><th>êµìˆ˜ëª…</th><th>ê°•ì˜ì‹œê°„</th><th>ì¥ì†Œ</th><th>í•™ì </th><th>ì·¨ì†Œ</th></tr>
 	<%
 	Calendar cal = Calendar.getInstance();
 	int nyear = cal.get(Calendar.YEAR);
     int nmonth = cal.get(Calendar.MONTH)+1; 
     String semester;
     if(nmonth>=1 && nmonth<=4){
-    	semester = "1ÇĞ±â";
+    	semester = "1í•™ê¸°";
     }else if(nmonth>=5 && nmonth<=10){
-    	semester = "2ÇĞ±â";
+    	semester = "2í•™ê¸°";
     }else{
     	nyear++;
-    	semester = "1ÇĞ±â";
+    	semester = "1í•™ê¸°";
     }
 	
 	Connection myConn = null;
@@ -48,8 +48,8 @@
 	
 	String mySQL = null;
 	String dburl = "jdbc:oracle:thin:@localhost:1521:orcl";
-	String user = "db1714223";
-	String passwd = "0917";
+	String user = "userid";
+	String passwd = "pw";
 	String dbdriver = "oracle.jdbc.driver.OracleDriver";
 	
 	String c_id = null;
@@ -83,7 +83,7 @@
 			<td align="center"><%= c_name %></td> <td align="center"><%= p_name %></td>
 			<td align="center"><%= t_time %></td> <td align="center"><%= t_place %></td>
 			<td align="center"><%= c_unit %></td>
-			<td id="delete_btn" align="center"><a href="delete_verify.jsp?c_id=<%= c_id %>">Ãë¼Ò</a></td>
+			<td id="delete_btn" align="center"><a href="delete_verify.jsp?c_id=<%= c_id %>">ì·¨ì†Œ</a></td>
 			</tr>
 		<%}
 	}
