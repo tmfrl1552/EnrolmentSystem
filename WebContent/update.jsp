@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>¼ö°­½ÅÃ» »ç¿ëÀÚ ¼öÁ¤</title>
+<title>ìˆ˜ê°•ì‹ ì²­ ì‚¬ìš©ìž ìˆ˜ì •</title>
 <style>
 	body{text-align:center;}
 	h2{color:#0D2D84;}
@@ -17,13 +17,13 @@
 </head>
 <body>
 	<%@include file="top.jsp" %>
-	<h2>»ç¿ëÀÚ Á¤º¸ ¼öÁ¤</h2>
+	<h2>ì‚¬ìš©ìž ì •ë³´ ìˆ˜ì •</h2>
 	<%
 	if(session_id != null){
 		String dbdriver = "oracle.jdbc.driver.OracleDriver"; 
 		String dburl = "jdbc:oracle:thin:@localhost:1521:orcl"; 
-		String user = "db1714223";
-		String passwd = "0917";
+		String user = "db_id";
+	        String passwd = "db_pw";
 		Connection myConn = null;
 		
 		Class.forName(dbdriver);
@@ -46,32 +46,32 @@
 		}%>
 		<br>
 		<table width="50%" align="center" bgcolor="#2060AA" cellspacing="0" cellpadding="0">
-		<tr><td><div align="center" style="color:#ffffff;">º¯°æÇÒ ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä</div></td></tr>
+		<tr><td><div align="center" style="color:#ffffff;">ë³€ê²½í•  ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ ì£¼ì„¸ìš”</div></td></tr>
 		</table>
 		<table width="50%" align="center" cellspacing="0" cellpadding="0">
 			<form method="post" action="update_verify.jsp">
 				<tr>
-				<td><div align="center">ÇÐ¹ø(¾ÆÀÌµð)</div></td>
+				<td><div align="center">í•™ë²ˆ(ì•„ì´ë””)</div></td>
 				<td><div align="center"><%=id %></div></td>
 				</tr>
 				<tr>
-				<td><div align="center">ÆÐ½º¿öµå</div></td>
+				<td><div align="center">íŒ¨ìŠ¤ì›Œë“œ</div></td>
 				<td><div align="center">
 				<input type="password" name="userPassword">
 				</div></td>
 				</tr>
 				<tr>
-				<td><div align="center">ÀÌ¸§</div></td>
+				<td><div align="center">ì´ë¦„</div></td>
 				<td><div align="center"><%=name %></div></td>
 				</tr>
 				<tr>
-				<td><div align="center">Àü°ø</div></td>
+				<td><div align="center">ì „ê³µ</div></td>
 				<td><div align="center"><%=major %></div></td>
 				</tr>
 				<tr>
 				<td colspan=2 ><div align="center">
-				<INPUT TYPE="SUBMIT" NAME="Submit" VALUE="¼öÁ¤ÇÏ±â">
-				<INPUT TYPE="RESET" VALUE="Ãë¼Ò"></div></td>
+				<INPUT TYPE="SUBMIT" NAME="Submit" VALUE="ìˆ˜ì •í•˜ê¸°">
+				<INPUT TYPE="RESET" VALUE="ì·¨ì†Œ"></div></td>
 				</tr>
 			</form>
 		</table>
@@ -84,7 +84,7 @@
 	else {
 		%>
 		<script>
-			alert("·Î±×ÀÎ ÇÑ ÈÄ »ç¿ëÇÏ¼¼¿ä.");
+			alert("ë¡œê·¸ì¸ í•œ í›„ ì‚¬ìš©í•˜ì„¸ìš”.");
 			location.href="login.jsp";
 		</script>
 	<%}%>
