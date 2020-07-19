@@ -9,8 +9,8 @@
 	Statement stmt = null;
 	String mySQL = null;
 	String dburl = "jdbc:oracle:thin:@localhost:1521:orcl";
-	String user = "db1714223"; 
-	String passwd = "0917";
+	String user = "db_id";
+	String passwd = "db_pw";
 	String dbdriver = "oracle.jdbc.driver.OracleDriver";
 	
 	Class.forName(dbdriver); 
@@ -25,7 +25,7 @@
 	}else {
 		%>
 		<script>
-			alert("����� ���̵� Ȥ�� ��ȣ�� Ʋ�Ƚ��ϴ�.");
+			alert("사용자 아이디 혹은 암호가 틀렸습니다.");
 			location.href="login.jsp";
 		</script>
 	<%}
