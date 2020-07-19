@@ -9,8 +9,8 @@ Statement stmt = null;
 
 String mySQL = null;
 String dburl = "jdbc:oracle:thin:@localhost:1521:orcl";
-String user = "db1710158";
-String passwd = "oracle";
+String user = "db_id";
+String passwd = "db_pw";
 String dbdriver = "oracle.jdbc.driver.OracleDriver";
 mySQL = "update students set s_pwd='"+userPassword+"' where s_id='"+session_id+"'";
 try{
@@ -23,14 +23,14 @@ try{
 	}
 	int n = stmt.executeUpdate(mySQL);%>
 	<script>
-		alert("Á¤»óÀûÀ¸·Î ¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+		alert("ì •ìƒì ìœ¼ë¡œ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		location.href="main.jsp";
 	</script>
 <%}catch(SQLException ex){
 	String sMessage;
-	if(ex.getErrorCode() == 20002) sMessage="¾ÏÈ£´Â 4ÀÚ¸® ÀÌ»óÀÌ¾î¾ß ÇÕ´Ï´Ù.";
-	else if(ex.getErrorCode() == 20003) sMessage="¾ÏÈ£¿¡ °ø¶õÀº ÀÔ·ÂµÇÁö ¾Ê½À´Ï´Ù.";
-	else sMessage="Àá½Ã ÈÄ ´Ù½Ã ½ÃµµÇÏ½Ê½Ã¿À";%>
+	if(ex.getErrorCode() == 20002) sMessage="ì•”í˜¸ëŠ” 4ìë¦¬ ì´ìƒì´ì–´ì•¼ í•©ë‹ˆë‹¤.";
+	else if(ex.getErrorCode() == 20003) sMessage="ì•”í˜¸ì— ê³µë€ì€ ì…ë ¥ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.";
+	else sMessage="ì ì‹œ í›„ ë‹¤ì‹œ ì‹œë„í•˜ì‹­ì‹œì˜¤";%>
 	<script>
 		alert("<%=sMessage%>");
 		location.href="update.jsp";
